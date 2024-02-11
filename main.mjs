@@ -1,6 +1,5 @@
 import data from "./data.json" assert { type: "json" };
-import { create } from "./cards.mjs"
-
+import { create } from "./cards.mjs";
 
 function setList(data) {
   if (typeof localStorage !== "undefined") {
@@ -26,10 +25,8 @@ let white = "white";
 let black = "#3e3e42";
 document.body.style.backgroundColor = white;
 let themeDiv = document.getElementsByClassName("theme");
-let theme = document.getElementById("theme-img")
+let theme = document.getElementById("theme-img");
 console.log(theme);
-
-
 
 themeDiv[0].addEventListener("click", function () {
   if (document.body.style.backgroundColor == white) {
@@ -41,10 +38,8 @@ themeDiv[0].addEventListener("click", function () {
   }
 });
 
-
-
 for (let i = 0; i < 8; i++) {
-  create(i,cardGroup,items);
+  create(i, cardGroup, items);
 }
 
 for (let i = 0; i < 8; i++) {
