@@ -19,7 +19,8 @@ setList(data);
 const items= JSON.parse(localStorage.getItem('itemList'));
 console.log(items);
 const cardGroup = document.getElementById("content");
-
+let cartQuantity= 0;
+const cartSum = document.getElementById("cart-num");
 
 function create(i){
         
@@ -112,7 +113,17 @@ for(let i=0;i<8;i++)
 {
     create(i);
 }
-                             
+
+for(let i=0;i<8;i++){
+    cartQuantity +=items[i]["quantity"] 
+    if(cartQuantity >= 1){
+        cartSum.textContent = cartQuantity;
+        cartSum.style.display = 'inline-block';
+    }
+}        
+
+console.log(cartQuantity);
+
 cardGroup.addEventListener("click", function(event){
         for(let i=0;i<8;i++){
             if(event.target.classList.contains('cart-btn'.concat(i))){
@@ -125,9 +136,11 @@ cardGroup.addEventListener("click", function(event){
                 items[i]["quantity"] ++;
                 addtocartbtn[0].textContent=items[i]["quantity"];
                 setListItems(items);
-                if(items[i]["quantity"] >=1){
-                    items[i]["clicked"] = true;
-                    setListItems(items); 
+
+                cartQuantity++;
+                if(cartQuantity >= 1){
+                    cartSum.textContent = cartQuantity;
+                    cartSum.style.display = 'inline-block';
                 }
         }
     }
@@ -140,9 +153,15 @@ cardGroup.addEventListener("click", function(event){
             let addtocartbtn=document.getElementsByClassName('cart-btn'.concat(i));
             addtocartbtn[0].textContent=items[i]["quantity"];
             setListItems(items);
+            cartQuantity++;
+            if(cartQuantity >= 1){
+                cartSum.textContent = cartQuantity;
+                cartSum.style.display = 'inline-block';
+            }
     }
 }
 })
+
 
 cardGroup.addEventListener("click", function(event){
     for(let i=0;i<8;i++){
@@ -162,7 +181,11 @@ cardGroup.addEventListener("click", function(event){
             else{
                 addtocartbtn[0].textContent = zero;
             }
-    
+                cartQuantity--;
+                if(cartQuantity >= 1){
+                    cartSum.textContent = cartQuantity;
+                    cartSum.style.display = 'inline-block';
+                }
             setListItems(items);
     }
 }
