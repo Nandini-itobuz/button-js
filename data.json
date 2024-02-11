@@ -3,7 +3,7 @@
         "id": "card0",
         "productName": "Huawei MateBook X Pro",
         "image": "images\\huawei-matebook-pro.jpg",
-        "price": "\u20b911,499",
+        "price": "1499",
         "description": "This is a gorgeously-designed laptop with a stunning screen.",
         "quantity" : 0,
         "clicked" : false
@@ -12,7 +12,7 @@
         "id": "card1",
         "productName": "Apple Macbook Pro",
         "image": "images\\macbook-pro-15.jpg",
-        "price": "\u20b993,199",
+        "price": "9199",
         "quantity" : 0,
         "clicked" :  false,
         "description": "If you're after the latest and greatest laptop from Apple, this is it. "
@@ -21,7 +21,7 @@
         "id": "card2",
         "productName": "Dell XPS 13",
         "image": "images\\dell-xps-13.png",
-        "price": "\u20b921,199",
+        "price": "2199",
         "quantity" : 0,
         "clicked" :  false,
         "description": "The Dell XPS 13 is an absolutely brilliant and stunning laptop."
@@ -30,7 +30,7 @@
         "id": "card3",
         "productName": "Asus ZenBook Flip S",
         "image": "images\\samsung-notebook-9.jpg",
-        "price": "\u20b951,399",
+        "price": "5399",
         "quantity" : 0,
         "clicked" :  false,
         "description": "Asus has struck gold with its new Flip S 2-in-1 laptop.Best of lot." 
@@ -39,7 +39,7 @@
         "id": "card4",
         "productName": "Samsung Notebook 9",
         "image": "images\\dell-xps-13.png",
-        "price": "\u20b961,499",
+        "price": "9499",
         "quantity" : 0,
         "clicked" :  false,
         "description": " Samsung Notebook 9 is Packed with more horsepower than some MacBook Pros"    
@@ -48,7 +48,7 @@
         "id": "card0",
         "productName": "Huawei MateBook X Pro",
         "image": "images\\huawei-matebook-pro.jpg",
-        "price": "\u20b981,499",
+        "price": "8499",
         "description": "The Huawei MateBook X Pro is our pick for the best laptop.",
         "quantity" : 0,
         "clicked" :  false
@@ -57,7 +57,7 @@
         "id": "card1",
         "productName": "Apple Macbook Pro",
         "image": "images\\macbook-pro-15.jpg",
-        "price": "\u20b933,199",
+        "price": "3199",
         "quantity" : 0,
         "clicked" :  false,
         "description": "If you're after the latest and greatest laptop from Apple, this is it. "
@@ -66,7 +66,7 @@
         "id": "card2",
         "productName": "Dell XPS 13",
         "image": "images\\dell-xps-13.png",
-        "price": "\u20b991,199",
+        "price": "9199",
         "quantity" : 0,
         "clicked" :  false,
         "description": " The 2018 version rocks an 8th-generation Intel Core i5 or i7 processor."
