@@ -17,10 +17,26 @@ function setListItems(data){
 
 setList(data);
 const items= JSON.parse(localStorage.getItem('itemList'));
-console.log(items);
 const cardGroup = document.getElementById("content");
 let cartQuantity= 0;
 const cartSum = document.getElementById("cart-num");
+
+let white= 'white';
+let black = '#3e3e42'
+document.body.style.backgroundColor = white;
+
+let themeDiv = document.getElementsByClassName('theme');
+
+
+themeDiv[0].addEventListener('click',function(){
+    if(document.body.style.backgroundColor == white){
+         document.body.style.backgroundColor = black;
+     }
+    else{
+        document.body.style.backgroundColor = white;
+    }
+})
+
 
 function create(i){
         
@@ -122,14 +138,12 @@ for(let i=0;i<8;i++){
     }
 }        
 
-console.log(cartQuantity);
 
 cardGroup.addEventListener("click", function(event){
         for(let i=0;i<8;i++){
             if(event.target.classList.contains('cart-btn'.concat(i))){
                 let cartMinusbtn=document.getElementsByClassName("cart-minusbtn".concat(i));
                 let cartAddbtn=document.getElementsByClassName("cart-addbtn".concat(i));
-
                 cartAddbtn[0].style.display ="block";
                 cartMinusbtn[0].style.display ="block"; 
                 let addtocartbtn=document.getElementsByClassName('cart-btn'.concat(i));
@@ -174,9 +188,11 @@ cardGroup.addEventListener("click", function(event){
                 zero=0;
                 let cartMinusbtn=document.getElementsByClassName("cart-minusbtn".concat(i));
                 let cartAddbtn=document.getElementsByClassName("cart-addbtn".concat(i));
-
-                cartAddbtn[0].style.display ="none";
-                cartMinusbtn[0].style.display ="none"; 
+                if(items[i]["quantity"] < 1){
+                    cartAddbtn[0].style.display ="none";
+                    cartMinusbtn[0].style.display ="none";
+                }
+                 
             } 
             else{
                 addtocartbtn[0].textContent = zero;
@@ -185,6 +201,9 @@ cardGroup.addEventListener("click", function(event){
                 if(cartQuantity >= 1){
                     cartSum.textContent = cartQuantity;
                     cartSum.style.display = 'inline-block';
+                }
+                else{
+                    cartSum.style.display = 'none';
                 }
             setListItems(items);
     }
