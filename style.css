@@ -19,8 +19,11 @@
 .nav .nav-img {
   width: 20vh;
 }
+.nav .theme {
+  margin-right: 20px;
+}
 .nav .cart {
-  background-color: #107BD4;
+  background-color: #107bd4;
   color: white;
   border: 0px;
   height: 30px;
@@ -30,7 +33,7 @@
   position: relative;
 }
 .nav .cart #cart-num {
-  background-color: #F8DF23;
+  background-color: #f8df23;
   height: 25px;
   padding: 5%;
   width: 25px;
@@ -50,6 +53,25 @@
 
 #theme-img {
   width: 20px;
+}
+
+.footer {
+  background-color: #f8df23;
+  display: flex;
+  position: fixed;
+  border-top: 20px solid white;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  padding: 1% 5%;
+  justify-content: space-between;
+}
+.footer .order {
+  border: 0px;
+  padding: 0.8% 5%;
+  color: white;
+  font-size: 1rem;
+  background-color: #107bd4;
 }
 
 @media (min-width: 425px) {
