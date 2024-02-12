@@ -80,6 +80,20 @@ function create(i, cardGroup, items) {
                                   display:none;
                                   border-radius:2%;`;
   cardAddButton.setAttribute("class", "cart-addbtn".concat(i));
+
+
+  const cardRemoveButton = document.createElement("button");
+  cardGroupItem.appendChild(cardRemoveButton);
+  cardRemoveButton.textContent = "Remove";
+  cardRemoveButton.style.cssText = `padding:3%;
+                                    margin-bottom:4%;
+                                    background-color:white;
+                                    color:#107BD4;
+                                    border:1px solid white;
+                                    display:none;
+                                    font-weight:600;`
 }
+
+
 
 export { create };

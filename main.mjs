@@ -4,6 +4,7 @@ import { create } from "./cards.mjs";
 const items = JSON.parse(localStorage.getItem("itemList"));
 const cardGroup = document.getElementById("content");
 const cartSum = document.getElementById("cart-num");
+
 let cartQuantity = 0;
 
 function setList(data) {
@@ -20,7 +21,7 @@ function updateListItems(data) {
   localStorage.setItem("itemList", JSON.stringify(data));
 }
 
-function theme() {
+function productPagetheme() {
   let white = "white";
   let black = "#3e3e42";
   document.body.style.backgroundColor = white;
@@ -45,15 +46,6 @@ function checkQuantity() {
   } else {
     cartSum.style.display = "none";
   }
-}
-
-theme();
-setList(data);
-
-for (let i = 0; i < 8; i++) {
-  create(i, cardGroup, items);
-  cartQuantity += items[i]["quantity"];
-  checkQuantity();
 }
 
 function centerCartBtn(cartAddbtn, cartMinusbtn, addtocartbtn, i) {
@@ -87,6 +79,16 @@ function minusCartBtn(addtocartbtn, cartAddbtn, cartMinusbtn, i) {
   checkQuantity();
 }
 
+productPagetheme();
+setList(data);
+
+for (let i = 0; i < 8; i++) {
+  create(i, cardGroup, items);
+
+  cartQuantity += items[i]["quantity"];
+  checkQuantity();
+}
+
 cardGroup.addEventListener("click", function (event) {
   for (let i = 0; i < 8; i++) {
     let cartMinusbtn = document.getElementsByClassName(
@@ -94,9 +96,11 @@ cardGroup.addEventListener("click", function (event) {
     );
     let cartAddbtn = document.getElementsByClassName("cart-addbtn".concat(i));
     let addtocartbtn = document.getElementsByClassName("cart-btn".concat(i));
-
+    
     if (event.target.classList.contains("cart-btn".concat(i))) {
+      // console.log(event.target)
       centerCartBtn(cartAddbtn[0], cartMinusbtn[0], addtocartbtn[0], i);
+      
     }
 
     if (event.target.classList.contains("cart-addbtn".concat(i))) {

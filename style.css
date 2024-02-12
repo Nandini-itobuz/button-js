@@ -39,7 +39,7 @@
   width: 25px;
   display: none;
   position: absolute;
-  bottom: 65%;
+  bottom: 50%;
   right: -15%;
   border-radius: 50%;
 }
@@ -74,7 +74,7 @@
   background-color: #107bd4;
 }
 
-@media (min-width: 425px) {
+@media (min-width: 500px) {
   #content {
     grid-template-columns: repeat(2, 1fr);
   }
